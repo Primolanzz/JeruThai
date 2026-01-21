@@ -1,0 +1,211 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+
+    top: 0;
+    background-image: url(imagens/bg-jeru.png); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;    
+
+    background-position: center center;
+    
+}
+
+
+/* configs da nav*/
+.centralizar-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+
+    width: 100%;
+    height: auto;
+    padding: 3px;
+
+    background-color: black;
+}
+
+.logo{
+    width: 75px;
+    height:75px;
+    margin-left: 7%;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav-opcoes{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+    font-weight: 450;
+    position: relative;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+
+    transition: all ease-in-out 0.2s;
+}
+
+.nav-link::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff5100, #e6b000, #ff5100);
+
+    transition: all ease-in-out 0.2s;
+}
+
+.nav-link:hover::before{
+    width: 100%;
+}
+
+.btn-matricula{
+    width: 10vw;
+    height: auto;
+
+    margin-right: 7%;
+
+    padding: 13px;
+    background-color: rgb(255, 81, 0);
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: rgb(0, 0, 0);
+
+    transition: all ease-in-out 0.2s;
+}
+
+.btn-matricula:hover{
+    transform:scale(1.1);
+
+    -webkit-box-shadow: 0px 0px 10px 0px rgb(253, 38, 0);
+    -moz-box-shadow: 0px 0px 10px 0px rgb(253, 38, 0);
+    box-shadow: 0px 0px 10px 0px rgb(253, 38, 0);
+
+    color: rgb(255, 255, 255);
+
+    cursor: pointer;
+}
+
+/* configs dos textos inicio*/
+
+
+.conteudo-inicio{
+    width: 40%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding-top: 20rem;
+
+    margin-left: 7%;
+}
+
+.titulo{
+    color: #ff4800;
+    font-size: 100px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 750;
+    font-style: normal;
+
+    letter-spacing: 4px;
+    
+    margin-bottom: 0.3rem;
+}
+
+.subtitulo{
+    color: white;
+    font-size: 20px;
+    letter-spacing: 9px;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+    font-weight: 600;
+    padding-left: 10px;
+
+    margin-bottom: 2.5rem;
+}   
+
+.textinho{
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+    font-weight: 450;
+    padding-left: 10px;
+    line-height: 1.5;
+   
+
+}
+
+.btn-saiba{
+    width: 14vw;
+    height: 8vh;
+    padding: 13px;
+
+    background-color: rgb(255, 81, 0);
+    border: 1px solid black;
+
+    border-radius: 7px;
+
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    margin-top: 5rem;
+
+    transition: all ease-in-out 0.3s;
+
+    margin-left: 10px;
+}
+
+.btn-saiba:hover{
+
+    -webkit-box-shadow: 0px 0px 10px 0px rgb(253, 38, 0);
+    -moz-box-shadow: 0px 0px 10px 0px rgb(253, 38, 0);
+    box-shadow: 0px 0px 10px 0px rgb(253, 38, 0);
+
+    color: rgb(255, 255, 255);
+
+    cursor: pointer;
+}
