@@ -16,7 +16,7 @@ body{
     min-height: 100vh;
 
     top: 0;
-    background-image: url(imagens/bg-jeru.webp); 
+    background-image: url(imagens/bg-sobre.png); 
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -28,30 +28,35 @@ body{
 
 
 /* configs da nav*/
-.centralizar-nav{
+.centralizar-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Mudamos para center para controlar os eixos */
     align-items: center;
     position: fixed;
     z-index: 1000;
-
     width: 100%;
-    height: auto;
-    padding: 3px;
-
+    padding: 17px 0; /* Padding vertical apenas */
     background-color: black;
+    top: 0;
 }
 
-.logo{
+.centralizar-nav::before, .centralizar-nav::after {
+    content: none;
+}
+
+
+.logo {
     width: 75px;
-    height:75px;
-    margin-left: 7%;
+    height: 75px;
+    position: absolute; /* Remove do fluxo para não empurrar o menu */
+    left: 5%;
 }
 
-.nav-bar{
+.nav-bar {
     display: flex;
     align-items: center;
     gap: 3rem;
+    margin: 0 auto; /* Força o menu para o centro matemático */
 }
 
 .nav-opcoes{
@@ -91,26 +96,18 @@ body{
     width: 100%;
 }
 
-.btn-matricula{
-    width: 11vw;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-decoration: none;
-
-    margin-right: 7%;
-
-    padding: 13px;
+.btn-matricula {
+    position: absolute; /* Remove do fluxo para não empurrar o menu */
+    right: 5%;
+    width: auto; /* Deixe o padding definir a largura para não quebrar */
+    min-width: 150px;
+    padding: 13px 20px;
     background-color: rgb(255, 81, 0);
     border-radius: 5px;
-    border: 1px solid rgb(0, 0, 0);
-
+    text-decoration: none;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     color: rgb(0, 0, 0);
-
     transition: all ease-in-out 0.2s;
 }
 
@@ -126,65 +123,65 @@ body{
     cursor: pointer;
 }
 
-/* configs dos textos inicio*/
 
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    text-align: center;
+}
 
-.conteudo-inicio{
-    width: 40%;
-    height: auto;
+.titulos-iniciais-sobre {
+    margin-bottom: 25px;
+}
+
+.titulo-sobre {
+    color: #fff;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.subtitulo-sobre {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-bottom: 13px;
+    color:#e63e00;
+}
+
+.card-topicos {
+    background-color: rgba(39, 39, 39, 0.158);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 90%;
+    margin-bottom: 30px;
 
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
 
-    padding-top: 9rem;
-
-    margin-left: 7%;
+    gap: 10px;
 }
 
-.titulo{
-    color: #ff4800;
-    font-size: 100px;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 750;
-    font-style: normal;
+.topicos {
+    color: #fff;
+    text-align: left;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    width: 100%;
 
-    letter-spacing: 4px;
-    
-    margin-bottom: 0.3rem;
-}
-
-.subtitulo{
-    color: white;
-    font-size: 20px;
-    letter-spacing: 9px;
-    font-optical-sizing: auto;
-
-    font-style: normal;
-    font-weight: 600;
-    padding-left: 10px;
-
-    margin-bottom: 2.5rem;
-}   
-
-.textinho{
-    color: white;
-    font-size: 20px;
-    letter-spacing: 2px;
-    font-optical-sizing: auto;
-
-    font-style: normal;
-    font-weight: 450;
-    padding-left: 10px;
-    line-height: 1.5;
-   
-
+    text-align: center;
 }
 
 .btn-saiba{
-    width: 14vw;
-    height: 8vh;
+    width: 13vw;
+    height: 7vh;
     padding: 13px;
 
     background-color: rgb(255, 81, 0);
@@ -196,7 +193,7 @@ body{
     font-weight: 700;
     letter-spacing: 2px;
 
-    margin-top: 5rem;
+    margin-top: 20px;
 
     transition: all ease-in-out 0.3s;
 
@@ -212,10 +209,9 @@ body{
 }
 
 .btn-saiba:hover{
+
     transform: scale(1.05);
     background-color: #e24800;
     box-shadow: 0px 0px 20px rgba(255, 81, 0, 0.4);
-
-    cursor: pointer;
 
 }
