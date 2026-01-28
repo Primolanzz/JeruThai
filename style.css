@@ -28,30 +28,35 @@ body{
 
 
 /* configs da nav*/
-.centralizar-nav{
+.centralizar-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: fixed;
     z-index: 1000;
-
     width: 100%;
-    height: auto;
-    padding: 3px;
-
+    padding: 17px 0; 
     background-color: black;
+    top: 0;
 }
 
-.logo{
-    width: 75px;
-    height:75px;
-    margin-left: 7%;
+.centralizar-nav::before, .centralizar-nav::after {
+    content: none;
 }
 
-.nav-bar{
+
+.logo {
+    width: 60px;
+    height: 60px;
+    position: absolute; 
+    left: 5%;
+}
+
+.nav-bar {
     display: flex;
     align-items: center;
     gap: 3rem;
+    margin: 0 auto; 
 }
 
 .nav-opcoes{
@@ -91,26 +96,18 @@ body{
     width: 100%;
 }
 
-.btn-matricula{
-    width: 11vw;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-decoration: none;
-
-    margin-right: 7%;
-
-    padding: 13px;
+.btn-matricula {
+    position: absolute; 
+    right: 5%;
+    width: auto; 
+    min-width: 150px;
+    padding: 13px 20px;
     background-color: rgb(255, 81, 0);
     border-radius: 5px;
-    border: 1px solid rgb(0, 0, 0);
-
+    text-decoration: none;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     color: rgb(0, 0, 0);
-
     transition: all ease-in-out 0.2s;
 }
 
@@ -125,6 +122,7 @@ body{
 
     cursor: pointer;
 }
+
 
 /* configs dos textos inicio*/
 
@@ -218,4 +216,61 @@ body{
 
     cursor: pointer;
 
+}
+
+
+
+/* ================================= ANIMAÇÕES DE ENTRADA ================================= */
+
+/* Keyframes para Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Pequeno deslocamento para simular um surgimento */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes para Slide Up */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes para Slide Right */
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Classes para aplicar as animações */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards; /* 1s de duração, suave, mantém o estado final */
+    opacity: 0; /* Começa invisível para a animação */
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-slide-Left {
+    animation: slideLeft 0.9s ease-out forwards;
+    opacity: 0;
 }
