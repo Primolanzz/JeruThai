@@ -96,6 +96,20 @@ body{
     width: 100%;
 }
 
+/* Esconde o ícone de 3 traços no Desktop */
+.menu-mobile-icon {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.traco {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
 .btn-matricula {
     position: absolute; 
     right: 5%;
@@ -273,4 +287,220 @@ body{
 .animate-slide-Left {
     animation: slideLeft 0.9s ease-out forwards;
     opacity: 0;
+}
+
+/* ================================= RESPONSIVIDADE: TABLET ================================= */
+
+@media screen and (min-width: 768px) and (max-width: 1234px) {
+    
+    body {
+        /* Trocando o Wallpaper para a versão Tablet */
+        background-image: url(imagens/bg-tablets-inicio.png); 
+        background-position: center;
+    }
+
+    /* Ajuste da Navegação */
+    .nav-bar {
+        gap: 1.5rem; /* Diminui o espaço entre os links para caber tudo */
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+        left: 3%; /* Aproxima um pouco da borda */
+    }
+
+    .btn-matricula {
+        min-width: 120px;
+        padding: 10px 15px;
+        font-size: 0.8rem;
+        right: 3%;
+    }
+
+    /* Ajuste do Conteúdo Principal */
+    .conteudo-inicio {
+        width: 80%; /* No tablet, o texto precisa de mais largura */
+        margin-left: 5%;
+        padding-top: 12rem; /* Aumenta o topo para não bater na nav fixa */
+    }
+
+    .titulo {
+        font-size: 70px; /* Diminui o título para não quebrar feio */
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        letter-spacing: 5px;
+        margin-bottom: 2rem;
+    }
+
+    .textinho {
+        font-size: 18px;
+        width: 100%; /* Garante que o texto ocupe a largura do container */
+    }
+
+    .btn-saiba {
+        width: 200px; /* Largura fixa em px é melhor que vw em tablets */
+        height: 60px;
+        margin-top: 3rem;
+    }
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 767px) {
+    /* Faz o ícone aparecer */
+    .menu-mobile-icon {
+        display: flex;
+        position: absolute;
+        right: 7%;
+        z-index: 1100;
+    }
+
+    /* Transforma a lista em um menu lateral escondido */
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondido à direita */
+        width: 70%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: 0.4s ease-in-out;
+        z-index: 1050;
+    }
+
+    /* Classe que o JavaScript vai aplicar para abrir o menu */
+    .nav-bar.menu-aberto {
+        right: 0;
+    }
+
+    /* Ajuste para o botão de matrícula não sumir ou atrapalhar */
+    .btn-matricula {
+        display: none; /* Geralmente no mobile colocamos esse botão dentro do menu ou removemos o absolute */
+    }
+}
+
+/* MOBILE COMPLETO (Dentro da Media Query 767px) */
+@media screen and (max-width: 767px) {
+    
+    body {
+        /* Wallpaper Vertical para Celular */
+        background-image: url(imagens/bg-mobile-inicio.png); 
+        background-attachment: scroll; /* Melhor para performance mobile */
+        background-position: center top;
+    }
+
+    /* Ajustes da Nav e Logo */
+    .logo {
+        width: 45px;
+        height: 45px;
+        left: 5%;
+    }
+
+    .centralizar-nav {
+        padding: 12px 0;
+        height: 7vh;
+    }
+
+    /* Ajuste do Conteúdo Principal */
+    .conteudo-inicio {
+        width: 90%; /* Ocupa quase a tela toda */
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10rem; /* Espaço para não bater na nav */
+        text-align: center; /* Centralizar no mobile melhora o design */
+        align-items: center;
+    }
+
+    .titulo {
+        font-size: 42px; /* Redução para não quebrar a tela */
+        line-height: 1.1;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+        letter-spacing: 3px;
+        padding-left: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .textinho {
+        font-size: 16px;
+        padding-left: 0;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    /* Botão Saiba Mais no Mobile */
+    .btn-saiba {
+        width: 100%;
+        max-width: 260px; /* Não deixa o botão ficar gigante em celulares largos */
+        height: 55px;
+        font-size: 18px;
+        margin-left: 0; /* Remove o margin do desktop */
+        margin-top: 2.5rem;
+    }
+
+    /* Ajuste dos itens dentro do Menu Lateral */
+    .nav-opcoes {
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 1.5rem; /* Links maiores no mobile facilitam o clique */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* ... (seus códigos anteriores do menu continuam aqui) ... */
+
+    .conteudo-inicio {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        
+        /* Aumentamos o topo para o conjunto todo descer um pouco, 
+           mas vamos controlar os elementos individualmente abaixo */
+        padding-top: 13rem; 
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 80vh; /* Garante que o conteúdo ocupe a altura da tela */
+    }
+
+    /* SOBE o Título e Subtítulo */
+    .titulo {
+        font-size: 60px;
+        margin-top: 0; 
+        margin-bottom: 5px; /* Deixa o subtítulo bem colado */
+    }
+
+    .subtitulo {
+        font-size: 13px;
+        margin-bottom: 22rem; /* A MÁGICA: esse espaçamento gigante empurra o texto para baixo e abre o buraco no meio */
+    }
+
+    /* DESCE o Texto e o Botão */
+    .textinho {
+        font-size: 15px;
+        line-height: 1.4;
+        margin-bottom: 2rem;
+    }
+
+    .btn-saiba {
+        margin-top: 0; /* O texto já empurrou ele para baixo */
+        width: 80%;
+    }
 }
