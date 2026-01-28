@@ -13,28 +13,31 @@
         rel="stylesheet">
 </head>
 
+<script>
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-bar');
+        nav.classList.toggle('menu-aberto');
+    }
+</script>
+
 <body>
      <header>
         <div class="container">
 
             <nav class="centralizar-nav" id="inicio">
                 <a href="index.html" class="logo"><img src="imagens/logo jeru.webp" alt="logo" class="logo"></a>
+
+                <div class="menu-mobile-icon" onclick="toggleMenu()">
+                    <div class="traco"></div>
+                    <div class="traco"></div>
+                    <div class="traco"></div>
+                </div>
+
                 <ul class="nav-bar">
-                    <li class="nav-opcoes">
-                        <a href="index.html" class="nav-link">Início</a>
-                    </li>
-
-                    <li class="nav-opcoes">
-                        <a href="sobre.html" class="nav-link">Sobre</a>
-                    </li>
-
-                    <li class="nav-opcoes">
-                        <a href="historia.html" class="nav-link">História</a>
-                    </li>
-
-                    <li class="nav-opcoes">
-                        <a href="contato.html" class="nav-link">Contato</a>
-                    </li>
+                    <li class="nav-opcoes"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-opcoes"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-opcoes"><a href="historia.html" class="nav-link">História</a></li>
+                    <li class="nav-opcoes"><a href="contato.html" class="nav-link">Contato</a></li>
                 </ul>
 
                 <a href="contato.html" class="btn-matricula">MATRICULE-SE</a>

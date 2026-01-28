@@ -96,6 +96,21 @@ body{
     width: 100%;
 }
 
+/* Esconde o ícone de 3 traços no Desktop */
+.menu-mobile-icon {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.traco {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+
 .btn-matricula {
     position: absolute; 
     right: 5%;
@@ -285,3 +300,122 @@ main {
     animation: slideLeft 0.9s ease-out forwards;
     opacity: 0;
 }
+
+
+/* responsividade */
+
+/* ================================= RESPONSIVIDADE: TABLET ================================= */
+@media screen and (min-width: 768px) and (max-width: 1234px) {
+    .nav-bar { gap: 1.5rem; }
+    .logo { left: 3%; }
+    .btn-matricula { right: 3%; }
+    
+    .titulo-sobre { font-size: 2.2rem; }
+    .card-topicos { width: 85%; }
+}
+
+/* ================================= RESPONSIVIDADE: TABLET ================================= */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .nav-bar { gap: 1.5rem; }
+    .logo { left: 3%; }
+    .btn-matricula { right: 3%; }
+    
+    .titulo-sobre { font-size: 2.2rem; }
+    .card-topicos { width: 85%; }
+}
+
+/* ================================= RESPONSIVIDADE: MOBILE ================================= */
+@media screen and (max-width: 767px) {
+    body {
+        /* Lembre de criar a versão vertical desta imagem também! */
+        background-image: url(imagens/bg-mobile.png); 
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    /* --- NAV MOBILE (Conforme o padrão da index) --- */
+    .menu-mobile-icon {
+        display: flex;
+        position: absolute;
+        right: 7%;
+        z-index: 1100;
+    }
+
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: 0.4s ease-in-out;
+        z-index: 1050;
+    }
+
+    .nav-bar.menu-aberto { right: 0; }
+    .btn-matricula { display: none; }
+
+    /* --- CONTEÚDO SOBRE --- */
+    main {
+        justify-content: flex-start; /* Alinha ao topo para controlarmos o espaço */
+        padding-top: 8rem; /* Sobe os títulos para perto da nav */
+    }
+
+    .titulo-sobre {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+
+    .subtitulo-sobre {
+        font-size: 1rem;
+        margin-bottom: 8rem; /* CRIA O ESPAÇO NO MEIO PARA O BG */
+    }
+
+    .card-topicos {
+        padding: 25px 15px;
+        width: 92%;
+        background-color: rgba(20, 20, 20, 0.8); /* Escurece um pouco mais para dar leitura */
+        border-radius: 15px;
+        gap: 5px;
+    }
+
+    .topicos {
+        font-size: 0.95rem;
+        margin: 10px 0;
+        line-height: 1.4;
+    }
+
+    .btn-saiba {
+        width: 29vw;
+        height: 60px;
+        font-size: 18px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .btn-saiba{
+        width: 16vw;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .btn-saiba{
+        width: 18vw;
+    }
+}
+
+@media screen and (max-width: 1156px) {
+    .btn-saiba{
+        width: 28vw;
+    }
+}
+
+
+
+
+
